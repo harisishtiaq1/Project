@@ -66,8 +66,8 @@ const onSubmit=(e)=>{
                 <div className="mb-3">
                     <textarea className="form-control"
                      placeholder="Message"
-                     cols="30" 
-                     rows="10"
+                     cols="10" 
+                     rows="5"
                      value={Message}
                      onChange={(e)=>setMessage(e.target.value)}
                 name="Message"></textarea>

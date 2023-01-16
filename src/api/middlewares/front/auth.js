@@ -1,7 +1,7 @@
 const jwt=require('jsonwebtoken')
 const User=require("../../models/users.model")
 const asyncHandler=require('express-async-handler')
-const byPassedRoutes = ["/v1/front/auth/register", "/v1/front/auth/login","/v1/front/auth/verify-email"];
+const byPassedRoutes = ["/v1/front/auth/register", "/v1/front/auth/login"];
 exports.authenticate =asyncHandler(async (req, res, next) => {
     console.log("check", req.originalUrl.indexOf("/v1/") > -1);
     if (req.originalUrl.indexOf("/v1/") > -1) {
@@ -19,6 +19,7 @@ exports.authenticate =asyncHandler(async (req, res, next) => {
           if (token == null) return res.sendStatus(401);
           jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
             if (err) return res.sendStatus(403);
+            console.log(err);
             next();
           });
         }

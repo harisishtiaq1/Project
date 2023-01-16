@@ -12,12 +12,12 @@ function Login() {
   const navigate = useNavigate();
   const dispatch=useDispatch();
   useEffect(() => {
-    console.log("data useffect",data)
     if(data){
          let path="/profile";
           navigate(path);
     }
-      }, [data])
+    
+      }, [])
   const user=localStorage.getItem("User")
   const forget = () => {
     let path = "/Forgot";
@@ -43,6 +43,9 @@ function Login() {
   }
   if(Password.length < 8) {
       return toast.error("Password should be at least 8 characters!")
+  }
+  if(data==null){
+    return toast.error("You are not verified")
   }
   if(!validateEmail(Email)) {
       return toast.error("Please enter valid email")
@@ -87,12 +90,6 @@ function Login() {
             <button type="submit" className="btn mb-3 clr" id="signin-btn">
               Sign in With Google
             </button>
-            <div className="text-center">
-              <span>
-                {" "}
-                New User?{" "}
-              </span>
-            </div>
           </form>
         </div>
       </div>
