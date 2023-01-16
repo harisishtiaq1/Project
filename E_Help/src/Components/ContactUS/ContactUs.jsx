@@ -31,7 +31,7 @@ const onSubmit=(e)=>{
         return toast.error("Please enter valid email")
     }
     else{
-        return toast.success("Message Send Successfully")
+        return toast.success("Message Sent Successfully")
     }
       }
   return (

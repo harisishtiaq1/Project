@@ -19,6 +19,9 @@ function Login() {
     }
       }, [data])
   const user=localStorage.getItem("User")
+  const profile=()=>{
+
+  }
   const forget = () => {
     let path = "/Forgot";
     navigate(path);
@@ -34,6 +37,7 @@ function Login() {
     e.preventDefault();
     const y = await dispatch(login({Email,Password}));
     console.log("y",y)
+    profile();
      setdata(y);
     setEmail("")
     setPassword("");
