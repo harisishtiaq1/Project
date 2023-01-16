@@ -1,7 +1,6 @@
 import React from 'react'
 import "../Login/Login.css";
 import {useState} from "react"
-import { useNavigate } from 'react-router-dom';
 import {useDispatch} from "react-redux"
 import {register} from "../../slices/auth/authSlice"
 import { toast } from 'react-hot-toast';
@@ -11,12 +10,7 @@ function Signup() {
     const [Password,setPassword]=useState("");
     const [confirmPassword,setConfirmPassword] = useState('');
     const [image,setimage]=useState("");
-    const nevigate=useNavigate();
     const dispatch=useDispatch();
-    const login=()=>{
-        let path="/";
-        nevigate(path);
-      }
       const validateEmail = (Email) => {
         return String(Email)
           .toLowerCase()
@@ -119,9 +113,6 @@ function Signup() {
                         <button type="submit" className="btn mb-3 clr" id="signup-btn">
                         Sign up With Google
                         </button>
-                        <div className="text-center">
-                            <span>Already have an account? <a href="">Login</a></span>
-                        </div>
                     </form>
                 </div>
             </div>
