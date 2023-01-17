@@ -12,7 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Toaster } from "react-hot-toast";
 import UpdateProfile from "./Components/UpdateProfile/UpdateProfile";
 import Header from "./Components/Header/Header";
-import Question from "./Components/Add-Question/Question";
+import Question from "./Components/Question/Question";
 import ViewQuestion from "./Components/ViewQuestion";
 import Stackoverflow from "./Components/Stackoverflow";
 import ContactUs from "./Components/ContactUS/ContactUs";
@@ -30,6 +30,7 @@ function App() {
         <Route path="/signup" exact={true} element={<Signup/>}/>
         <Route path="/add-question" element={<Question/>}/>
         <Route path="/dashboard" exact={true} element={<Main/>}/>
+        <Route path="/profile" exact={true} element={<Profile/>}/>
         <Route path="/Forgot" exact={true} element={<Forgot/>}/>
         <Route path="/reset" exact={true} element={<Reset/>}/>
         <Route path="/update" exact={true} element={<UpdateProfile/>}/>

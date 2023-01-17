@@ -20,6 +20,10 @@ function Header() {
     let path = "/contact";
     navigate(path);
   };
+  const profile=()=>{
+    let path="/profile"
+    navigate(path);
+  }
     return (
         <header>
           <div className="header-container">
@@ -49,7 +53,7 @@ function Header() {
                           <span><i class="fa-solid fa-user icon"></i></span>
                         <div class="dropdown-content">
                           <p>Sign out</p>
-                          <p>Profile</p>
+                          <p onClick={()=>profile()}>Profile</p>
                             </div>
                             </div>
           </div>
