@@ -18,6 +18,7 @@ if (response.data)
     localStorage.setItem("user",JSON.stringify(response.data))
     const getdata = localStorage.getItem("user");
     console.log("getdata",getdata)
+    console.log("response.data",response.data)
 }    
 return response.data
 }

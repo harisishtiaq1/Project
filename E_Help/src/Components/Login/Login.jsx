@@ -13,6 +13,7 @@ function Login() {
   const dispatch=useDispatch();
   useEffect(() => {
     if(data){
+      console.log("data",data)
          let path="/profile";
           navigate(path);
     }
@@ -32,8 +33,10 @@ function Login() {
   const onSubmit=async(e)=>{
     e.preventDefault();
     const y = await dispatch(login({Email,Password}));
-    console.log("y",y)
-     setdata(y);
+    console.log("y.payload",y.payload)
+    const token=y.payload.token
+    console.log("token",token);
+     setdata(token);
     setEmail("")
     setPassword("");
     if(!Email || !Password) {
@@ -42,9 +45,6 @@ function Login() {
   }
   if(Password.length < 8) {
       return toast.error("Password should be at least 8 characters!")
-  }
-  if(data==null){
-    return toast.error("You are not verified")
   }
   if(!validateEmail(Email)) {
       return toast.error("Please enter valid email")
