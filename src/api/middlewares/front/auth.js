@@ -17,9 +17,8 @@ exports.authenticate =asyncHandler(async (req, res, next) => {
           const token = authHeader && authHeader.split(" ")[1];
           console.log("token", token);
           if (token == null) return res.sendStatus(401);
-          jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
+          jwt.verify(token, process.env.JWT, (err, decoded) => {
             if (err) return res.sendStatus(403);
-            console.log(err);
             next();
           });
         }
