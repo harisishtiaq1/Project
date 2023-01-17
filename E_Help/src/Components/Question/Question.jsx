@@ -1,4 +1,5 @@
 import React from 'react'
+import "../Question/Question.css"
 import { useState,useEffect } from 'react'
 import {useDispatch} from "react-redux"
 import {question} from "../../slices/auth/authSlice"
