@@ -161,10 +161,20 @@ exports.contact = async(req, res) => {
                 Name,
                 Email,
                 Message,
-            })    
+        
+            })
+            if (contact){
+                res.status(201).json({
+                    _id: contact.id,
+                    Name: contact.Name,
+                    Email: contact.Email,
+                    Message:contact.Message
+                })
+            }
+            }    
         }
         
-    } catch (error) {
+     catch (error) {
         console.log(error);
     }
 }
