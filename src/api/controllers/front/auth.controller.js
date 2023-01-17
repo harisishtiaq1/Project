@@ -192,15 +192,17 @@ exports.question = async(req, res) => {
 exports.answer = async(req, res) => {
     try {
         const { createdBy,questionId, comments } = req.body;
+        console.log("req.body",req.body);
         const answer = await Answer.create({
             createdBy,
             questionId,
             comments,
         })
+        console.log("answer",answer);
         if (answer) {
             res.status(201).json({
                 _id: answer.id,
-                comment: answer.comment,
+                comments: answer.comments,
             })
         } else {
             res.json("Invalid Data")
