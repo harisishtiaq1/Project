@@ -14,7 +14,7 @@ function Login() {
   useEffect(() => {
     if(data){
       console.log("data",data)
-         let path="/profile";
+         let path="/dashboard";
           navigate(path);
     }
       }, [data])

@@ -16,6 +16,7 @@ import Question from "./Components/Add-Question/Question";
 import ViewQuestion from "./Components/ViewQuestion";
 import Stackoverflow from "./Components/Stackoverflow";
 import ContactUs from "./Components/ContactUS/ContactUs";
+import Main from "./Components/Stackoverflow/Main"
 function App() {
   return (
   <>
@@ -28,7 +29,7 @@ function App() {
         <Route path="/main" exact={true} element={<Login/>} />
         <Route path="/signup" exact={true} element={<Signup/>}/>
         <Route path="/add-question" element={<Question/>}/>
-        <Route path="/profile" exact={true} element={<Profile/>}/>
+        <Route path="/dashboard" exact={true} element={<Main/>}/>
         <Route path="/Forgot" exact={true} element={<Forgot/>}/>
         <Route path="/reset" exact={true} element={<Reset/>}/>
         <Route path="/update" exact={true} element={<UpdateProfile/>}/>
