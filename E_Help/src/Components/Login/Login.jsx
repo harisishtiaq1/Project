@@ -16,7 +16,7 @@ function Login() {
          let path="/profile";
           navigate(path);
     }
-      }, [])
+      }, [data])
   const user=localStorage.getItem("User")
   const forget = () => {
     let path = "/Forgot";

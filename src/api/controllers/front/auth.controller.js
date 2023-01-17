@@ -1,6 +1,7 @@
 const User = require("../../models/users.model")
 const Contact = require("../../models/Contact.model")
 const Question = require("../../models/Question.model")
+const Answer=require("../../models/Answer.model")
 const bcrypt = require("bcryptjs")
 const nodemailer = require("nodemailer")
 const crypto = require("crypto")
@@ -77,7 +78,6 @@ exports.register = async(req, res, next) => {
                 Name: user.Name,
                 Email: user.Email,
                 image:user.image,
-                token: generateToken(user._id)
             })
         } else {
             res.json("Invalid Data")
@@ -181,6 +181,26 @@ exports.question = async(req, res) => {
                 _id: question.id,
                 Title: question.Title,
                 Description: question.Description,
+            })
+        } else {
+            res.json("Invalid Data")
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+exports.answer = async(req, res) => {
+    try {
+        const { createdBy,questionId, comments } = req.body;
+        const answer = await Answer.create({
+            createdBy,
+            questionId,
+            comments,
+        })
+        if (answer) {
+            res.status(201).json({
+                _id: answer.id,
+                comment: answer.comment,
             })
         } else {
             res.json("Invalid Data")

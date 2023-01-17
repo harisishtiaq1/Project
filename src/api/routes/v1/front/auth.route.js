@@ -12,5 +12,6 @@ router.route("/verify-email").get(controller.verify);
 router.route("/login").post(controller.login)
 router.route("/contact").post(controller.contact)
 router.route('/question').post(authenticate,controller.question)
+router.route("/answer").post(authenticate,controller.answer)
 router.route("/edit-profile").put(controller.editProfile)
 module.exports = router;
