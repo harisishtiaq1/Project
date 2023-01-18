@@ -1,6 +1,6 @@
 import React from 'react'
 import "../Login/Login.css";
-import {useState} from "react"
+import {useState,useEffect} from "react"
 import {useDispatch} from "react-redux"
 import {register} from "../../slices/auth/authSlice"
 import { toast } from 'react-hot-toast';
