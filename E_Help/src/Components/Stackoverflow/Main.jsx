@@ -1,5 +1,7 @@
 import React from "react";
 import './css/Main.css';
+import {login} from "../../slices/auth/authSlice"
+import { redirect } from 'react-router-dom'
 import { BsFillFilterCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import AllQuestions from "./AllQuestions";

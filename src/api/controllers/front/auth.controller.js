@@ -2,6 +2,7 @@ const User = require("../../models/users.model")
 const Contact = require("../../models/Contact.model")
 const Question = require("../../models/Question.model")
 const Answer=require("../../models/Answer.model")
+const Votes=require("../../models/Votes.model")
 const bcrypt = require("bcryptjs")
 const nodemailer = require("nodemailer")
 const crypto = require("crypto")
@@ -213,6 +214,27 @@ exports.answer = async(req, res) => {
             res.status(201).json({
                 _id: answer.id,
                 comments: answer.comments,
+            })
+        } else {
+            res.json("Invalid Data")
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+exports.votes = async(req, res) => {
+    try {
+        const { createdBy, Title, Description } = req.body;
+        const votes = await Votes.create({
+            createdBy,
+            Title,
+            Description,
+        })
+        if (votes) {
+            res.status(201).json({
+                _id: votes.id,
+                Title: votes.Title,
+                Description: votes.Description,
             })
         } else {
             res.json("Invalid Data")

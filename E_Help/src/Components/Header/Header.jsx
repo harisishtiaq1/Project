@@ -49,9 +49,9 @@ function Header() {
                             <span><a onClick={()=>contact()} href="">Contact Us</a></span>
                         </div>
                         
-                        <div class="dropdown">
+                        <div className="dropdown">
                           <span><i class="fa-solid fa-user icon"></i></span>
-                        <div class="dropdown-content">
+                        <div className="dropdown-content">
                           <p>Sign out</p>
                           <p onClick={()=>profile()}>Profile</p>
                             </div>

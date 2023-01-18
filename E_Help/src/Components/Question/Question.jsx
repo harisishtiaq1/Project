@@ -1,12 +1,21 @@
 import React from 'react'
 import "../Question/Question.css"
+import { redirect } from 'react-router-dom'
 import { useState,useEffect } from 'react'
 import {useDispatch} from "react-redux"
+import login from "../../slices/auth/authSlice"
 import {question} from "../../slices/auth/authSlice"
 function Question() {
   const [Title,setTitle]=useState("")
   const [Description,setDescription]=useState("")
   const dispatch=useDispatch();
+  const loader= async()=>{
+    const user=await login();
+    if(!user){
+      return redirect("/login")
+    }
+
+  }
   const onSubmit=(e)=>{
     e.preventDefault();
     dispatch(question({Title,Description}));
