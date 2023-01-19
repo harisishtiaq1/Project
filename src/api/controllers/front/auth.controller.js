@@ -121,7 +121,7 @@ exports.verify = async(req, res) => {
         console.log(error);
     }
 }
-exports.login = async(req, res) => {
+exports.login = async(req, res,next) => {
     try {
         const { Email, Password } = req.body;
         const user = await User.findOne({ Email })
@@ -142,6 +142,7 @@ exports.login = async(req, res) => {
         if (!isMatch) {
             return res.status(400).json({ msg: 'Email or password incorrect' });
         }
+        next();
     } catch (error) {
         console.log(error);
     }
