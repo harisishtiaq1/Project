@@ -1,7 +1,13 @@
 import React from 'react'
 import haris1 from "../Profile/haris1.jpg"
+import { useNavigate } from 'react-router-dom'
 import "../Profile/Profile.css"
 function Profile() {
+const nevigate=useNavigate();
+const edit=()=>{
+  let path="/update"
+  nevigate(path)
+}
   return (
     <div className='container'>
       <div className='signin-wrap'>
@@ -11,7 +17,7 @@ function Profile() {
         <div className='d-flex left flex-column'>
             <h2 className='color'>Muhammad Haris Ishtiaq</h2>
             <h4>Member Since 6 January</h4>
-            <button type="submit" className="btn mb-3" id="signin-btn">
+            <button onClick={()=>edit()} type="submit" className="btn mb-3" id="signin-btn">
               Edit Profile
             </button>
         </div>
