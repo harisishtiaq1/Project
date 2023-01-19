@@ -178,3 +178,6 @@ header {
   .icon{
     margin-right: 45px;
   }
+  .pointer{
+    cursor: pointer;
+  }

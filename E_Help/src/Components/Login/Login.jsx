@@ -36,7 +36,7 @@ function Login() {
     console.log("y.payload",y.payload)
     const token=y.payload.token
     console.log("token",token);
-     setdata(token);
+    setdata(token);
     setEmail("")
     setPassword("");
     if(!Email || !Password) {

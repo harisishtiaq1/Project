@@ -16,6 +16,10 @@ function Header() {
     let path = "/signup";
     navigate(path);
   };
+  const logout=()=>{
+    window.localStorage.clear();
+    window.location.href="./login"
+  }
   const contact = () => {
     let path = "/contact";
     navigate(path);
@@ -52,8 +56,8 @@ function Header() {
                         <div className="dropdown">
                           <span><i class="fa-solid fa-user icon"></i></span>
                         <div className="dropdown-content">
-                          <p>Sign out</p>
-                          <p onClick={()=>profile()}>Profile</p>
+                          <p className="pointer" onClick={()=>logout()}>Sign out</p>
+                          <p className="pointer" onClick={()=>profile()}>Profile</p>
                             </div>
                             </div>
           </div>
