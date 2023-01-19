@@ -10,13 +10,19 @@ import ReactQuill from "react-quill";
 
 function MainQuestion() {
     const [show, setShow] = useState(false)
+    const logout=()=>{
+        if(localStorage==null){
+        window.location.href="./login"
+      }
+    }
+    
     return (
         <div className="main">
             <div className="main-container">
                 <div className="main-top">
                     <h2 className="main-question">This is question title</h2>
                     <Link to='/add-question'>
-                        <button>Ask Question</button>
+                        <button onClick={()=>logout()}>Ask Question</button>
                     </Link>
                 </div>
                 <div className="main-desc">
