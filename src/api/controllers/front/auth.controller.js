@@ -7,8 +7,6 @@ const bcrypt = require("bcryptjs")
 const nodemailer = require("nodemailer")
 const crypto = require("crypto")
 const jwt = require("jsonwebtoken")
-const multer = require("multer");
-const { v4: uuidv4 } = require("uuid");
 const path = require("path");
 const generateToken = (id) => {
     return jwt.sign({ id }, process.env.JWT, {
@@ -182,12 +180,14 @@ exports.contact = async(req, res) => {
 }
 exports.question = async(req, res) => {
     try {
+        console.log("token",token)
         const { createdBy, Title, Description } = req.body;
         const question = await Question.create({
             createdBy,
             Title,
             Description,
         })
+    
         if (question) {
             res.status(201).json({
                 _id: question.id,

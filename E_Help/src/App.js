@@ -20,9 +20,9 @@ import Main from "./Components/Stackoverflow/Main"
 function App() {
   return (
   <>
-    <Toaster/>
+    
     <Header/>
-  
+    <Toaster/>
       <Routes>
       <Route path="/" exact={true} element={<Stackoverflow/>}/>
         <Route path="/login" exact={true} element={<Login/>} />
