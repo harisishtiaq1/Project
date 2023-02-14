@@ -12,6 +12,9 @@ function AllQuestions(){
                 <p>0</p>
                 <span>Votes</span>
             </div>
+            <div>
+                
+            </div>
             <div className="all-option">
                 <p>0</p>
                 <span>Answer</span>
