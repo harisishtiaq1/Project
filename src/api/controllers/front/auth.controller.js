@@ -65,7 +65,6 @@ exports.register = async(req, res, next) => {
         const user = await User.create({
             Name,
             Email,
-            image,
             Password: hashPassword,
             emailToken: crypto.randomBytes(64).toString('hex'),
             isVerified: false
@@ -76,7 +75,6 @@ exports.register = async(req, res, next) => {
                 _id: user.id,
                 Name: user.Name,
                 Email: user.Email,
-                image:user.image,
             })
         } else {
             res.json("Invalid Data")
@@ -110,9 +108,9 @@ exports.verify = async(req, res) => {
         if (user) {
             user.emailToken = null;
             user.isVerified = true;
-            await user.save();
-            res.json("User is Verified")
-        } else {
+           const updateUser= await user.save();
+           if (updateUser) {res.redirect('http://localhost:3000/login')
+        } }else {
             res.json("User is not Verified Please verify First")
         }
     } catch (error) {

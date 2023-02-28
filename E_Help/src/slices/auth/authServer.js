@@ -1,11 +1,10 @@
 import axios from "axios";
 
-
 const api_url="http://localhost:8000/v1/front/auth/"
 // Register user
 
 const Register=async(userData)=>{
-    console.log(userData);
+console.log(userData);
 const response =await axios.post(api_url + "register",userData)
 return response.formdata
 }
