@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 function Answer() {
   return (
@@ -8,22 +8,19 @@ function Answer() {
           <h2 className="text-center mb-3">Sign In</h2>
           <form>
             <div className="mb-3">
-            Email Address:<input
-                type="email"
-                className="form-control"
-              />
+              Email Address:
+              <input type="email" className="form-control" />
             </div>
             <div className="mb-3">
-              Password:<input
+              Password:
+              <input
                 type="password"
                 className="form-control"
                 id="exampleInputPassword1"
               />
             </div>
             <div className="d-flex justify-content-end mb-3">
-              <a  href="">
-                Forgot Password?
-              </a>
+              <a href="">Forgot Password?</a>
             </div>
             <button type="submit" className="btn mb-3" id="signin-btn">
               Sign In
@@ -34,17 +31,14 @@ function Answer() {
             <div className="text-center">
               <span>
                 {" "}
-                New User?{" "}
-                <a href="">
-                  Create Account
-                </a>
+                New User? <a href="">Create Account</a>
               </span>
             </div>
           </form>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Answer
+export default Answer;
